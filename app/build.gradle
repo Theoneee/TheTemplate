@@ -1,0 +1,14 @@
+apply plugin: 'com.android.application'
+apply from: "../default.gradle"
+
+android {
+    defaultConfig {
+        applicationId "com.theone.sample"
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+
+}
