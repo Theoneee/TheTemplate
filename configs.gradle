@@ -5,7 +5,7 @@ ext {
     compileSdkVersion = 30
     buildVersion = '30.0.3'
 
-    theCoreVersion = '1.0.3'
+    theCoreVersion = '1.0.9'
 
     rxjavaVersion ='3.1.1'
     rxhttpVersion = '2.7.1'
