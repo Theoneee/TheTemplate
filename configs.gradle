@@ -1,14 +1,10 @@
 ext {
 
     minSdkVersion = 21
-    targetSdkVersion = 30
-    compileSdkVersion = 30
-    buildVersion = '30.0.3'
+    targetSdkVersion = 31
+    compileSdkVersion = 31
 
-    theCoreVersion = '1.0.9'
-
-    rxjavaVersion ='3.1.1'
-    rxhttpVersion = '2.7.1'
-    rxhttpPackage ='rxhttp.wrapper.param'
+    theCoreVersion = '1.2.0'
+    rxhttpVersion = '2.8.5'
 
 }

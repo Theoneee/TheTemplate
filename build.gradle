@@ -1,39 +1,24 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 apply from: "configs.gradle"
 
 buildscript {
-
     ext {
-        kotlin_version = "1.4.32"
-    }
+        minSdkVersion = 21
+        targetSdkVersion = 31
+        compileSdkVersion = 31
 
+        kotlin_version = "1.6.10"
+        ktx_version = "1.7.0"
+    }
     repositories {
-        maven{ url'http://maven.aliyun.com/nexus/content/groups/public/' }
-        jcenter { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
-        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/central/'}
-        google()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath 'com.android.tools.build:gradle:7.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
-allprojects {
-    repositories {
-        maven {
-            url 'https://www.jitpack.io'
-        }
-        maven{ url'http://maven.aliyun.com/nexus/content/groups/public/' }
-        jcenter { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
-        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/central/'}
-        google()
-    }
-    //配置这个
-    tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-        options.addStringOption('encoding', 'UTF-8')
     }
 }
 
