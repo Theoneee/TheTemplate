@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="String" />
+
+    </data>
+
+    <com.qmuiteam.qmui.layout.QMUIFrameLayout
+        android:layout_width="match_parent"
+        app:qmui_radius="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            app:imageUrl="@{item}"
+            android:layout_height="200dp" />
+
+    </com.qmuiteam.qmui.layout.QMUIFrameLayout>
+</layout>

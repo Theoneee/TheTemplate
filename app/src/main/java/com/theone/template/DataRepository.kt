@@ -1,11 +1,7 @@
 package com.theone.template
 
-import android.util.SparseArray
-import android.view.View
-import com.theone.mvvm.base.viewmodel.BaseViewModel
-import com.theone.mvvm.core.base.fragment.BaseCoreFragment
-import com.theone.mvvm.ext.addParams
-import com.theone.template.databinding.FragmentMainBinding
+import com.theone.common.ext.delay
+import kotlinx.coroutines.delay
 
 //  ┏┓　　　┏┓
 //┏┛┻━━━┛┻┓
@@ -26,22 +22,22 @@ import com.theone.template.databinding.FragmentMainBinding
 //      ┗┻┛　┗┻┛
 /**
  * @author The one
- * @date 2022-02-10 09:48
+ * @date 2022-03-18 17:07
  * @describe TODO
  * @email 625805189@qq.com
  * @remark
  */
-class MainFragment : BaseCoreFragment<MainViewModel,FragmentMainBinding>() {
+object DataRepository {
 
-    override fun initView(root: View) {
-        getTopBar()?.setTitle("The Template")
-    }
+    const val URL = "https://image.geeko.ltd/webp/medium/f7083697-1d86-4e0d-b8b2-f1b029abf3b1-10100-pc"
 
-    override fun createObserver() {
-    }
+    fun getData():List<String>{
 
-    override fun SparseArray<Any>.applyBindingParams() {
-        addParams(BR.url,DataRepository.URL)
+        val list = mutableListOf<String>()
+        for (index in 1..10){
+            list.add(URL)
+        }
+        return list
     }
 
 }

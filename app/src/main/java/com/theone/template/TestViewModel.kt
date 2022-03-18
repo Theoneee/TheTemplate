@@ -1,11 +1,8 @@
 package com.theone.template
 
-import android.util.SparseArray
-import android.view.View
-import com.theone.mvvm.base.viewmodel.BaseViewModel
-import com.theone.mvvm.core.base.fragment.BaseCoreFragment
-import com.theone.mvvm.ext.addParams
-import com.theone.template.databinding.FragmentMainBinding
+import com.theone.common.ext.delay
+import com.theone.mvvm.core.base.viewmodel.BaseListViewModel
+import com.theone.mvvm.core.data.net.IPageInfo
 
 //  ┏┓　　　┏┓
 //┏┛┻━━━┛┻┓
@@ -26,22 +23,22 @@ import com.theone.template.databinding.FragmentMainBinding
 //      ┗┻┛　┗┻┛
 /**
  * @author The one
- * @date 2022-02-10 09:48
+ * @date 2022-03-18 17:02
  * @describe TODO
  * @email 625805189@qq.com
  * @remark
  */
-class MainFragment : BaseCoreFragment<MainViewModel,FragmentMainBinding>() {
+class TestViewModel:BaseListViewModel<String> (){
 
-    override fun initView(root: View) {
-        getTopBar()?.setTitle("The Template")
-    }
-
-    override fun createObserver() {
-    }
-
-    override fun SparseArray<Any>.applyBindingParams() {
-        addParams(BR.url,DataRepository.URL)
+    override fun requestServer() {
+        delay(1000){
+            onSuccess(DataRepository.getData(),object :IPageInfo{
+                override fun getPage(): Int  = page
+                override fun getPageSize(): Int  = 10
+                override fun getPageTotalCount(): Int = 1
+                override fun getTotalCount(): Int  = 10
+            })
+        }
     }
 
 }

@@ -1,11 +1,7 @@
 package com.theone.template
 
-import android.util.SparseArray
-import android.view.View
+import com.theone.common.callback.databind.StringObservableField
 import com.theone.mvvm.base.viewmodel.BaseViewModel
-import com.theone.mvvm.core.base.fragment.BaseCoreFragment
-import com.theone.mvvm.ext.addParams
-import com.theone.template.databinding.FragmentMainBinding
 
 //  ┏┓　　　┏┓
 //┏┛┻━━━┛┻┓
@@ -26,22 +22,13 @@ import com.theone.template.databinding.FragmentMainBinding
 //      ┗┻┛　┗┻┛
 /**
  * @author The one
- * @date 2022-02-10 09:48
+ * @date 2022-03-18 17:25
  * @describe TODO
  * @email 625805189@qq.com
  * @remark
  */
-class MainFragment : BaseCoreFragment<MainViewModel,FragmentMainBinding>() {
+class MainViewModel:BaseViewModel() {
 
-    override fun initView(root: View) {
-        getTopBar()?.setTitle("The Template")
-    }
-
-    override fun createObserver() {
-    }
-
-    override fun SparseArray<Any>.applyBindingParams() {
-        addParams(BR.url,DataRepository.URL)
-    }
+    val url = StringObservableField(DataRepository.URL)
 
 }
