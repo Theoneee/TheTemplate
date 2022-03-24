@@ -1,7 +1,7 @@
-package com.theone.template
+package com.theone.template.app
 
-import com.theone.mvvm.core.base.adapter.TheBaseQuickAdapter
-import com.theone.template.databinding.ItemTestBinding
+import android.app.Application
+import com.theone.mvvm.core.app.CoreApplication
 
 //  ┏┓　　　┏┓
 //┏┛┻━━━┛┻┓
@@ -22,10 +22,18 @@ import com.theone.template.databinding.ItemTestBinding
 //      ┗┻┛　┗┻┛
 /**
  * @author The one
- * @date 2022-03-18 17:03
+ * @date 2022-02-10 09:52
  * @describe TODO
  * @email 625805189@qq.com
  * @remark
  */
-class TestAdapter:TheBaseQuickAdapter<String,ItemTestBinding>(R.layout.item_test) {
+class App:CoreApplication() {
+
+    override fun isDebug(): Boolean = true
+
+    override fun init(application: Application) {
+        super.init(application)
+        // TODO 初始化
+    }
+
 }

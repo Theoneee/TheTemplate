@@ -1,7 +1,13 @@
-package com.theone.template
+package com.theone.template.ui
 
-import com.theone.common.ext.delay
-import kotlinx.coroutines.delay
+import android.util.SparseArray
+import android.view.View
+import com.theone.mvvm.core.base.fragment.BaseCoreFragment
+import com.theone.mvvm.ext.addParams
+import com.theone.template.BR
+import com.theone.template.data.repository.DataRepository
+import com.theone.template.viewmodel.MainViewModel
+import com.theone.template.databinding.FragmentMainBinding
 
 //  ┏┓　　　┏┓
 //┏┛┻━━━┛┻┓
@@ -22,22 +28,18 @@ import kotlinx.coroutines.delay
 //      ┗┻┛　┗┻┛
 /**
  * @author The one
- * @date 2022-03-18 17:07
+ * @date 2022-02-10 09:48
  * @describe TODO
  * @email 625805189@qq.com
  * @remark
  */
-object DataRepository {
+class MainFragment : BaseCoreFragment<MainViewModel,FragmentMainBinding>() {
 
-    const val URL = "https://image.geeko.ltd/webp/medium/f7083697-1d86-4e0d-b8b2-f1b029abf3b1-10100-pc"
+    override fun initView(root: View) {
+        getTopBar()?.setTitle("QMUI-MVVM")
+    }
 
-    fun getData():List<String>{
-
-        val list = mutableListOf<String>()
-        for (index in 1..10){
-            list.add(URL)
-        }
-        return list
+    override fun createObserver() {
     }
 
 }

@@ -1,10 +1,6 @@
 ext {
 
-    minSdkVersion = 21
-    targetSdkVersion = 31
-    compileSdkVersion = 31
-
-    theCoreVersion = '1.2.0'
+    coreVersion = '1.0.0'
     rxhttpVersion = '2.8.5'
 
 }

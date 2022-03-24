@@ -1,9 +1,9 @@
-package com.theone.template
+package com.theone.template.ui
 
 import com.qmuiteam.qmui.arch.annotation.DefaultFirstFragment
 import com.theone.mvvm.base.activity.BaseFragmentActivity
 
-@DefaultFirstFragment(TestFragment::class)
+@DefaultFirstFragment(MainFragment::class)
 class MainActivity : BaseFragmentActivity() {
 
 }

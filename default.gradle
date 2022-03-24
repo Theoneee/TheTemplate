@@ -45,7 +45,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.gitee.theoneee.The-Base-MVVM:core:2.0.0-beta'
-//    implementation "com.github.Theoneee:TheCore-MVVM:$theCoreVersion"
+    implementation "com.github.Theoneee:QMUI-MVVM:$coreVersion"
     kapt "com.github.liujingxing.rxhttp:rxhttp-compiler:$rxhttpVersion"
 }

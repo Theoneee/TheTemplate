@@ -1,8 +1,7 @@
-package com.theone.template
+package com.theone.template.viewmodel
 
-import com.theone.common.ext.delay
-import com.theone.mvvm.core.base.viewmodel.BaseListViewModel
-import com.theone.mvvm.core.data.net.IPageInfo
+import com.theone.common.callback.databind.StringObservableField
+import com.theone.mvvm.base.viewmodel.BaseViewModel
 
 //  ┏┓　　　┏┓
 //┏┛┻━━━┛┻┓
@@ -23,22 +22,13 @@ import com.theone.mvvm.core.data.net.IPageInfo
 //      ┗┻┛　┗┻┛
 /**
  * @author The one
- * @date 2022-03-18 17:02
+ * @date 2022-03-18 17:25
  * @describe TODO
  * @email 625805189@qq.com
  * @remark
  */
-class TestViewModel:BaseListViewModel<String> (){
+class MainViewModel:BaseViewModel() {
 
-    override fun requestServer() {
-        delay(1000){
-            onSuccess(DataRepository.getData(),object :IPageInfo{
-                override fun getPage(): Int  = page
-                override fun getPageSize(): Int  = 10
-                override fun getPageTotalCount(): Int = 1
-                override fun getTotalCount(): Int  = 10
-            })
-        }
-    }
+    val des = StringObservableField("QMUI + Jetpack 组件封装的一个MVVM框架")
 
 }
